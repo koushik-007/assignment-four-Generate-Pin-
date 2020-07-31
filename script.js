@@ -13,11 +13,19 @@ for (item of calculatorBtn) {
             screenValueSecond = "";
             screenSecond.value = screenValueSecond;
            }
-           
+
         else if(buttonText == '<'){
+            console.log("scVal", screenValueSecond);
             screenValueSecond = parseInt(screenValueSecond/10);
-            const newCurrent = screenValueSecond;
-            screenSecond.value = newCurrent;
+            let newCurrent = screenValueSecond;
+            console.log("val", newCurrent);
+            if (newCurrent !=0) {
+                screenSecond.value = newCurrent;
+            }
+           else{
+            screenSecond.value = "";
+            screenValueSecond = "";
+           }
         }
 
         else{
