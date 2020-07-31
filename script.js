@@ -15,10 +15,10 @@ for (item of calculatorBtn) {
            }
 
         else if(buttonText == '<'){
-            console.log("scVal", screenValueSecond);
+            
             screenValueSecond = parseInt(screenValueSecond/10);
             let newCurrent = screenValueSecond;
-            console.log("val", newCurrent);
+            
             if (newCurrent !=0) {
                 screenSecond.value = newCurrent;
             }
