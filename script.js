@@ -34,17 +34,29 @@ for (item of calculatorBtn) {
         }
     })
 }
-function submit(){
-    const firstScreenValue = document.getElementById('screenFirst').value;
-   
-    const screenValueSecond = document.getElementById('screenSecond').value;
 
-    if (firstScreenValue == screenValueSecond) {
-        const pinMatch = document.getElementById('pinMatch').style.display = 'block';
-        pinNotMatch = document.getElementById('pinNotMatch').style.display = 'none';
+function submit(){
+   
+    const click = document.getElementById('clickCount').innerText;
+    const clickCountNumber = parseInt(click);
+    
+    const newClickCount = clickCountNumber - 1;
+    
+    document.getElementById('clickCount').innerText = newClickCount;
+    if (newClickCount == 0) {
+        document.getElementById("submit").disabled = true;
     }
-    else{
-        const pinNotMatch = document.getElementById('pinNotMatch').style.display = 'block';
-        pinMatch = document.getElementById('pinMatch').style.display = 'none';
+    else if (newClickCount > 0) {
+        const firstScreenValue = document.getElementById('screenFirst').value;
+        const screenValueSecond = document.getElementById('screenSecond').value;
+
+        if (firstScreenValue == screenValueSecond) {
+            const pinMatch = document.getElementById('pinMatch').style.display = 'block';
+            pinNotMatch = document.getElementById('pinNotMatch').style.display = 'none';
+        }
+        else{
+            const pinNotMatch = document.getElementById('pinNotMatch').style.display = 'block';
+            pinMatch = document.getElementById('pinMatch').style.display = 'none';
+        }
     }
 }
